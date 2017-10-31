@@ -1,14 +1,12 @@
 #container {
    height: 850px;
    width: 850px;
-   background-color: black;
    display: block;
 }
 
 .row {
 	width: auto;
 	display: block;
-	background-color: green;
 	width: 841px;
 }
 
@@ -19,5 +17,5 @@
 }
 
 #covered {
-	background-color: black;
+	background-color: red;
 }

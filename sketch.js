@@ -1,6 +1,5 @@
-var rows = 16;
-var columns = 16;
-var height = 840 / columns;
+var rows = 100;
+var height = 840 / rows;
 var width = 840 / rows;
 
 var $row = $("<div />", {
@@ -10,8 +9,10 @@ var $square = $("<div />", {
     class: 'square'
 });
 
+
+
 $(document).ready(function () {
-    for (var i = 0; i < columns; i++) {
+    for (var i = 0; i < rows; i++) {
         $row.append($square.clone());
     }
     for (var i = 0; i < rows; i++) {
@@ -21,5 +22,11 @@ $(document).ready(function () {
     $(".square").css("width", width);
     $(".square").css("height", height);
 
-
+    $(document.body).on("mouseover", ".square", function() {
+         $(this).css("background-color", "red")
+    });
 });
+
+
+ 
+       
