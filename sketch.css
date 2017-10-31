@@ -1,0 +1,23 @@
+#container {
+   height: 850px;
+   width: 850px;
+   background-color: black;
+   display: block;
+}
+
+.row {
+	width: auto;
+	display: block;
+	background-color: green;
+	width: 841px;
+}
+
+.square {
+	background-color: blue;
+	display: inline-block;
+	outline: black 1px solid;
+}
+
+#covered {
+	background-color: black;
+}
