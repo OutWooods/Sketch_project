@@ -44,7 +44,7 @@ $(document).ready(function () {
          	colour = "blue"
            };
            if(boring == true) {
-           	colour = "white";
+           	colour = "black";
            };
          $(this).css("background-color", colour);
          if (circle == true) {
@@ -73,26 +73,32 @@ $(document).ready(function () {
     $(".dot").on("click", function () {
         if(circle == false) { 
         	circle = true;
-            eraser = false;
+            $(".dot span").text("Circle Mode On");
             }
-       else {circle = false};
+       else {circle = false;
+            $(".dot span").text("Circle Mode Off");};
     });
 
      $(".eraser").on("click", function () {
         if(eraser == false) { 
         	boring = false;
         	eraser = true;
-        	$(".eraser").text(normal);
+        	$(".eraser span").text("Eraser Mode On");
             circle = false;}
-       else {eraser = false};
+       else {eraser = false
+            $(".eraser span").text("Eraser Mode Off");
+       };
     });
 
      $(".boring").on("click", function () {
         if(boring == false) { 
         	boring = true;
         	eraser = false;
-            circle = false;}
-       else {boring = false};
+        	$(".boring span").text("Make it Rainbow")
+            }
+       else {boring = false
+            $(".boring span").text("Paint it black")
+       }; 
     });
 
    
