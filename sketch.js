@@ -13,8 +13,8 @@ var $square = $("<div />", {
 });
 
 function gridMaker(number){
-	height = size / number;
-    width = size / number; 
+	height = Math.floor(size / number);
+    width = Math.floor(size / number); 
     for (var i = 0; i < number; i++) {
         $row.append($square.clone());
     }
