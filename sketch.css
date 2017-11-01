@@ -46,7 +46,7 @@ button {
 .row {
 	width: auto;
 	display: block;
-	width: 360px;
+	background-color: blue;
 }
 
 .square {

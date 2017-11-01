@@ -15,6 +15,7 @@ var $square = $("<div />", {
 function gridMaker(number){
 	height = Math.floor(size / number);
     width = Math.floor(size / number); 
+    rowWidth = width * number
     for (var i = 0; i < number; i++) {
         $row.append($square.clone());
     }
@@ -22,6 +23,7 @@ function gridMaker(number){
         $("#container").append($row.clone());
     }
     $(".row").css("height", height);
+    $(".row").css("width", rowWidth);
     $(".square").css("width", width);
     $(".square").css("height", height);
  }
