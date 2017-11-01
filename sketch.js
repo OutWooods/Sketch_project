@@ -1,6 +1,8 @@
 var rows = 20;
 var size = 360;
 var circle =  false;
+var eraser = false;
+var boring = false;
 
 
 var $row = $("<div />", {
@@ -37,20 +39,29 @@ $(document).ready(function () {
 
     $(document.body).on("mouseover", ".square", function() {
     	 $(this).removeClass("blue");
-    	 var colour = colourGen()
+    	  var colour = colourGen()
+    	  if (eraser == true) {
+         	colour = "blue"
+           };
+           if(boring == true) {
+           	colour = "white";
+           };
          $(this).css("background-color", colour);
          if (circle == true) {
          	$(this).addClass("circle");
          }
          else {
             $(this).removeClass("circle");
-         }
+         };
+        
     });
     $(".reset").on("click", function() {
          $("#container").empty();
+         circle = false;
+         eraser = false;
           $($row).empty();
-         var thing = prompt("How many rows do you want? (Whole numbers between 1-70)");
-         if(thing < 71  && thing > 1 &&  thing % 1 == 0) {
+         var thing = prompt("How many rows do you want? (Whole numbers between 1-61)");
+         if(thing < 61  && thing > 1 &&  thing % 1 == 0) {
          	 gridMaker(thing);
          }
          else {
@@ -60,8 +71,28 @@ $(document).ready(function () {
 
     });
     $(".dot").on("click", function () {
-        if(circle == false) { circle = true}
+        if(circle == false) { 
+        	circle = true;
+            eraser = false;
+            }
        else {circle = false};
+    });
+
+     $(".eraser").on("click", function () {
+        if(eraser == false) { 
+        	boring = false;
+        	eraser = true;
+        	$(".eraser").text(normal);
+            circle = false;}
+       else {eraser = false};
+    });
+
+     $(".boring").on("click", function () {
+        if(boring == false) { 
+        	boring = true;
+        	eraser = false;
+            circle = false;}
+       else {boring = false};
     });
 
    
